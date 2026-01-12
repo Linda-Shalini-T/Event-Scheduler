@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Events</h3>
+
+<a href="{{ url_for('events.add_event') }}" class="btn btn-success mb-3">
+    Add Event
+</a>
+<a href="/dashboard" class="btn btn-dark mb-3">← Back to Dashboard</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for e in events %}
+        <tr>
+            <td>{{ e.title }}</td>
+            <td>{{ e.start_time }}</td>
+            <td>{{ e.end_time }}</td>
+            <td>
+                <a href="{{ url_for('events.edit_event', event_id=e.event_id) }}"
+                   class="btn btn-sm btn-primary">Edit</a>
+
+                <a href="{{ url_for('events.delete_event', event_id=e.event_id) }}"
+                   class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

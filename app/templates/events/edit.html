@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Edit Event</h3>
+
+<form method="POST">
+    <input class="form-control mb-2" name="title" value="{{ event.title }}" required>
+    <input class="form-control mb-2" type="datetime-local" name="start_time"
+           value="{{ event.start_time.strftime('%Y-%m-%dT%H:%M') }}" required>
+    <input class="form-control mb-2" type="datetime-local" name="end_time"
+           value="{{ event.end_time.strftime('%Y-%m-%dT%H:%M') }}" required>
+    <textarea class="form-control mb-3" name="description">{{ event.description }}</textarea>
+    <button class="btn btn-primary">Update</button>
+    <a href="/dashboard" class="btn btn-dark mb">← Back to Dashboard</a>
+
+</form>
+
+{% endblock %}

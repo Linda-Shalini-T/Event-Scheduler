@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Dashboard</h3>
+<hr>
+
+<div class="list-group">
+    <a class="list-group-item" href="{{ url_for('events.view_events') }}">Manage Events</a>
+    <a class="list-group-item" href="{{ url_for('resources.view_resources') }}">Manage Resources</a>
+    <a class="list-group-item" href="{{ url_for('allocations.allocate') }}">Allocate Resources</a>
+    <a class="list-group-item" href="{{ url_for('reports.utilization') }}">Utilization Report</a>
+</div>
+{% endblock %}

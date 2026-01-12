@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Allocate Resources</h3>
+<a href="/dashboard" class="btn btn-dark mb-3">← Back to Dashboard</a>
+<form method="POST">
+
+    <!-- Event Select -->
+    <select class="form-control mb-3" name="event_id" required>
+        <option value="">Select Event</option>
+        {% for e in events %}
+            <option value="{{ e.event_id }}">{{ e.title }}</option>
+        {% endfor %}
+    </select>
+
+    <!-- Resource Checkboxes -->
+    <label class="mb-2">Select Resources</label>
+
+    {% for r in resources %}
+        <div class="form-check">
+            <input class="form-check-input"
+                   type="checkbox"
+                   name="resource_ids"
+                   value="{{ r.resource_id }}"
+                   id="res{{ r.resource_id }}">
+
+            <label class="form-check-label" for="res{{ r.resource_id }}">
+                {{ r.resource_name }} ({{ r.resource_type }})
+            </label>
+        </div>
+    {% endfor %}
+
+    <button class="btn btn-success mt-3">
+        Allocate
+    </button>
+</form>
+
+{% endblock %}

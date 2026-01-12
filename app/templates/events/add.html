@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Add Event</h3>
+
+<form method="POST">
+    <input class="form-control mb-2" name="title" placeholder="Event Title" required>
+    <input class="form-control mb-2" type="datetime-local" name="start_time" required>
+    <input class="form-control mb-2" type="datetime-local" name="end_time" required>
+    <textarea class="form-control mb-3" name="description" placeholder="Description"></textarea>
+    <button class="btn btn-success">Create Event</button>
+    <a href="/dashboard" class="btn btn-dark mb">← Back to Dashboard</a>
+
+</form>
+
+{% endblock %}
