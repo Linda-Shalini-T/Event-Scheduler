@@ -91,5 +91,5 @@ Open your browser and visit:
 | resource_id (FK → Resource.id)    |
 +-----------------------------------+
 
-Screenshot & video are in github
+Video
 [text](https://drive.google.com/file/d/1WxMxbh8hlrE-IJwXZSR0oLQMrmRx4kwH/view?usp=drivesdk)
